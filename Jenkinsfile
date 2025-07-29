@@ -28,8 +28,15 @@ pipeline {
                 }
             }
             steps {
-                sh 'echo "Test stage"'
-            }        
+                sh '''
+                echo "Test stage"
+                if test -e build/index.html; then
+                    echo "index.html exists."
+                else
+                    echo "index.html does not exist."
+                fi
+                '''
+            }
         }
     }
 }
