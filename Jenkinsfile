@@ -35,8 +35,8 @@ pipeline {
                 else
                     echo "index.html does not exist."
                 fi
-                '''
                 npm test
+                '''
             }
         }
     }
